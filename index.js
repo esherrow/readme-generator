@@ -133,7 +133,7 @@ const questions = () => {
         },
         {
             type: 'input',
-            name: 'credits',
+            name: 'tests',
             message: 'What should be known to run tests?',
             when: ({
                 confirmTest
@@ -152,7 +152,6 @@ const questions = () => {
 questions()
     .then(readmeInfo => {
         return generatePage(readmeInfo);
-        console.log(answers);
     })
     .then()
 // TODO: Create a function to write README file
