@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const generatePage = require('./src/page-template');
+const generateMarkdown = require('./utils/generateMarkdown');
+const generatePage = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -151,7 +152,7 @@ const questions = () => {
 
 questions()
     .then(readmeInfo => {
-        return generatePage(readmeInfo);
+        return generateMarkdown(readmeInfo);
     })
     .then()
 // TODO: Create a function to write README file

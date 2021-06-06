@@ -65,7 +65,7 @@ const {name, github, email, ...project} = readmeInfo
     return `
     # ${project.projTitle}
 
-    ![${project.licenses.join('_')}](https://img.shields.io/badge/license-${licenses.join('%20')}-blueviolet)
+    ![{project.licenses.join('_')}](https://img.shields.io/badge/license-{licenses.join('%20')}-blueviolet)
     
     ## Description
     ${project.projDesc}
@@ -79,7 +79,7 @@ const {name, github, email, ...project} = readmeInfo
     
     ${generateInstall(project.installation)}
     ${generateUsage(project.usage)}
-    ${generateLicense(project.licenses)}
+    {generateLicense(project.licenses)}
     ${generateTests(project.tests)}
     ${generateCredits(project.credits)}
     ${generateContrib(project.contribution)}
