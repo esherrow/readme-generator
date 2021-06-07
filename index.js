@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
-const generatePage = require('./utils/generateMarkdown');
+
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -141,25 +141,28 @@ const questions = () => {
             }) => confirmTest
         },
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'licenses',
             message: 'What licenses apply to this project? (Check all that apply)',
-            choices: ['Apache2.0', 'GNU_GPL_v3', 'MIT', 'ISC', 'Mozilla2.0', 'Boost', 'Unilicense']
+            choices: ['Apache-2.0', 'GPL-3.0', 'MIT', 'ISC', 'MPL-2.0']
         }
 
     ]);
 };
 
-questions()
-    .then(readmeInfo => {
-        return generateMarkdown(readmeInfo);
-    })
-    .then()
+
 // TODO: Create a function to write README file
 //function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
-//function init() {}
+function init() {
+    questions()
+    .then(readmeInfo => {
+        return generateMarkdown(readmeInfo);
+        //console.log(readmeInfo);
+    })
+
+}
 
 // Function call to initialize app
-//init();
+init();

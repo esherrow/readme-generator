@@ -1,5 +1,35 @@
-const generateInstall = installText => {
-  if(!installText){
+
+// TODO: Create a function that returns a license badge based on which license is passed in
+// If there is no license, return an empty string
+function renderLicenseBadge(license) {
+  if(!license){ return '';}
+  return`
+  ![${data.licenses}](https://img.shields.io/badge/license-${data.licenses}-blueviolet)(https://opensource.org/licenses/${data.licenses})
+  `
+}
+
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {
+  if(!license){ return '';}
+  return`
+  https://opensource.org/licenses/${data.licenses}
+
+  `
+}
+
+// TODO: Create a function that returns the license section of README
+// If there is no license, return an empty string
+function renderLicenseSection(license) {
+  if(!license){ return'';}
+    return`
+    # Licenses
+    ${licenses}
+    `
+  };
+  
+const generateInstall = install => {
+  if(!install){
       return'';
   }
   return`
@@ -8,8 +38,8 @@ const generateInstall = installText => {
   `
 };
 
-const generateUsage = usageText => {
-  if(!usageText){
+const generateUsage = usage => {
+  if(!usage){
       return'';
   }
   return`
@@ -18,18 +48,9 @@ const generateUsage = usageText => {
   `
 };
 
-const generateLicense = licenseText => {
-  if(!licenseText){
-      return'';
-  }
-  return`
-  # Licenses
-  ${licenses}
-  `
-};
 
-const generateContrib = contribText => {
-  if(!contribText){
+const generateContrib = contribution => {
+  if(!contribution){
       return'';
   }
   return`
@@ -38,8 +59,8 @@ const generateContrib = contribText => {
   `
 };
 
-const generateCredits = creditsText => {
-  if(!creditsText){
+const generateCredits = credits => {
+  if(!credits){
       return'';
   }
   return`
@@ -48,8 +69,8 @@ const generateCredits = creditsText => {
   `
 };
 
-const generateTests = testsText => {
-  if(!testsText){
+const generateTests = tests => {
+  if(!tests){
       return'';
   }
   return`
@@ -57,23 +78,14 @@ const generateTests = testsText => {
   ${tests}
   `
 };
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.projTitle}
+  
+  return `
+  # ${data.projTitle}
 
-  ![{data.licenses.join('_')}](https://img.shields.io/badge/license-{data.licenses.join('%20')}-blueviolet)
+  ${renderLicenseBadge(data.licenses)}
     
   ## Description
   ${data.projDesc}
@@ -86,10 +98,16 @@ function generateMarkdown(data) {
   *[Contributing]#contributing
     
   ${generateInstall(data.installation)}
+
   ${generateUsage(data.usage)}
-  {generateLicense(data.licenses)}
+
+  ${renderLicenseSection(data.licenses)}
+  ${renderLicenseLink(data.licenses)}
+
   ${generateTests(data.tests)}
+  
   ${generateCredits(data.credits)}
+  
   ${generateContrib(data.contribution)}
 
   ## Questions
