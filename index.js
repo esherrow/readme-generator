@@ -145,7 +145,7 @@ const questions = () => {
             type: 'list',
             name: 'licenses',
             message: 'What licenses apply to this project? (Check all that apply)',
-            choices: ['Apache-2.0', 'GPL-3.0', 'MIT', 'ISC', 'MPL-2.0']
+            choices: ['Apache-2.0', 'GPL-3.0', 'MIT', 'ISC', 'MPL-2.0', 'none']
         }
 
     ]);
@@ -154,14 +154,14 @@ const questions = () => {
 
 //TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    return new Promise((resolve,reject)=>{
-        fs.writeFile('./dist/'+fileName, data, err =>{
-            if (err){
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/' + fileName, data, err => {
+            if (err) {
                 reject(err);
                 return;
             }
             resolve({
-                ok:true,
+                ok: true,
                 message: 'File created!'
             });
         });
@@ -171,16 +171,13 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     questions()
-    .then(readmeInfo => {
-        console.log(readmeInfo);
-        writeToFile ('README.md', generateMarkdown(readmeInfo));
-        
-    })
-    //.then(writeToFile(projTitleInput,readmeInfo))
-    .catch(err => {
-        console.log(err);    
-    });
-
+        .then(readmeInfo => {
+            console.log(readmeInfo);
+            writeToFile('README.md', generateMarkdown(readmeInfo));
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 // Function call to initialize app

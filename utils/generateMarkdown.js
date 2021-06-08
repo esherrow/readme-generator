@@ -1,10 +1,10 @@
-
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if(!license){ return '';}
-  console.log("renderLicenseBadge")
-  return`
+  if (license = "none") {
+    return '';
+  }
+  return `
   ![${license}](https://img.shields.io/badge/license-${license}-blueviolet)(https://opensource.org/licenses/${license})
   `
 }
@@ -12,90 +12,74 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if(!license){ return '';}
-  console.log("renderLicenseLink");
-  return`
-  https://opensource.org/licenses/${license}
-
+  if (license = "none") {
+    return '';
+  }
+  return `https://opensource.org/licenses/${license}
   `
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if(!license){ return'';}
-  console.log("renderLicenseSection");  
-  return`
-    # Licenses
-    ${license}
-    `
-  };
-  
-const generateInstall = installation => {
-  if(!installation){
-      
-    return'';
+  if (license = "none") {
+    return '';
   }
-  console.log("generateInstall");
-  return`
-  # Installation
+  return `# Licenses
+  ${license}`
+};
+
+const generateInstall = installation => {
+  if (!installation) {
+    return '';
+  }
+  return `# Installation
   ${installation}
   `
 };
 
 const generateUsage = usage => {
-  if(!usage){
-    return'';
+  if (!usage) {
+    return '';
   }
-  console.log("generateUsage")
-  return`
-  # Usage
+  return `# Usage
   ${usage}
   `
 };
 
-
 const generateContrib = contribution => {
-  if(!contribution){
-      return'';
+  if (!contribution) {
+    return '';
   }
-  console.log("generateContrib")
-  return`
-  # Contributing
+  return `# Contributing
   ${contribution}
   `
 };
 
 const generateCredits = credits => {
-  if(!credits){
-      return'';
+  if (!credits) {
+    return '';
   }
-  console.log("generateCredits")
-  return`
-  # Credits
+  return `# Credits
   ${credits}
   `
 };
 
 const generateTests = tests => {
-  if(!tests){
-      return'';
+  if (!tests) {
+    return '';
   }
-  console.log("generateTests")
-  return`
-  # Tests
+  return `# Tests
   ${tests}
   `
 };
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  console.log("data",data);
-  let fileContent = `
-  # ${data.projTitle}
 
+  let fileContent =
+    `# ${data.projTitle}
   ${renderLicenseBadge(data.licenses)}
-    
   ## Description
   ${data.projDesc}
     
@@ -107,27 +91,20 @@ function generateMarkdown(data) {
   *[Contributing]#contributing
     
   ${generateInstall(data.installation)}
-
   ${generateUsage(data.usage)}
-
   ${renderLicenseSection(data.licenses)}
   ${renderLicenseLink(data.licenses)}
-
   ${generateTests(data.tests)}
-  
   ${generateCredits(data.credits)}
-  
   ${generateContrib(data.contribution)}
-
   ## Questions
   If you have any questions, or comments, regarding this repository please use the following contact information:
   ${data.name}
   ${data.github}
   ${data.email}
-
 `;
-console.log(fileContent);
-return fileContent;
+
+  return fileContent;
 }
 
 module.exports = generateMarkdown;
