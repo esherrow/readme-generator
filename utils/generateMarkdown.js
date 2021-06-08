@@ -83,12 +83,12 @@ function generateMarkdown(data) {
   ## Description
   ${data.projDesc}
     
-  *[Installation](#installation)
-  *[Usage](#usage)
-  *[Licences](#licenses)
-  *[Tests](#tests)
-  *[Credits](#credits)
-  *[Contributing](#contributing)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Licences](#licenses)
+  * [Tests](#tests)
+  * [Credits](#credits)
+  * [Contributing](#contributing)
     
   ${generateInstall(data.installation)}
   ${generateUsage(data.usage)}

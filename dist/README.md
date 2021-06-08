@@ -3,12 +3,12 @@
   ## Description
   node.js application that will generate a README file based on user-prompted information.
     
-  *[Installation](#installation)
-  *[Usage](#usage)
-  *[Licences](#licenses)
-  *[Tests](#tests)
-  *[Credits](#credits)
-  *[Contributing](#contributing)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Licences](#licenses)
+  * [Tests](#tests)
+  * [Credits](#credits)
+  * [Contributing](#contributing)
     
   
   
