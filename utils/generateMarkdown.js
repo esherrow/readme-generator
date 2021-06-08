@@ -3,8 +3,9 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if(!license){ return '';}
+  console.log("renderLicenseBadge")
   return`
-  ![${data.licenses}](https://img.shields.io/badge/license-${data.licenses}-blueviolet)(https://opensource.org/licenses/${data.licenses})
+  ![${license}](https://img.shields.io/badge/license-${license}-blueviolet)(https://opensource.org/licenses/${license})
   `
 }
 
@@ -12,8 +13,9 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if(!license){ return '';}
+  console.log("renderLicenseLink");
   return`
-  https://opensource.org/licenses/${data.licenses}
+  https://opensource.org/licenses/${license}
 
   `
 }
@@ -22,16 +24,19 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if(!license){ return'';}
-    return`
+  console.log("renderLicenseSection");  
+  return`
     # Licenses
-    ${licenses}
+    ${license}
     `
   };
   
-const generateInstall = install => {
-  if(!install){
-      return'';
+const generateInstall = installation => {
+  if(!installation){
+      
+    return'';
   }
+  console.log("generateInstall");
   return`
   # Installation
   ${installation}
@@ -40,8 +45,9 @@ const generateInstall = install => {
 
 const generateUsage = usage => {
   if(!usage){
-      return'';
+    return'';
   }
+  console.log("generateUsage")
   return`
   # Usage
   ${usage}
@@ -53,6 +59,7 @@ const generateContrib = contribution => {
   if(!contribution){
       return'';
   }
+  console.log("generateContrib")
   return`
   # Contributing
   ${contribution}
@@ -63,6 +70,7 @@ const generateCredits = credits => {
   if(!credits){
       return'';
   }
+  console.log("generateCredits")
   return`
   # Credits
   ${credits}
@@ -73,6 +81,7 @@ const generateTests = tests => {
   if(!tests){
       return'';
   }
+  console.log("generateTests")
   return`
   # Tests
   ${tests}
@@ -81,8 +90,8 @@ const generateTests = tests => {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  
-  return `
+  console.log("data",data);
+  let fileContent = `
   # ${data.projTitle}
 
   ${renderLicenseBadge(data.licenses)}
@@ -117,6 +126,8 @@ function generateMarkdown(data) {
   ${data.email}
 
 `;
+console.log(fileContent);
+return fileContent;
 }
 
 module.exports = generateMarkdown;
