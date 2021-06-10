@@ -15,8 +15,7 @@
   
   # Usage
   node index.js
-  
-  [Walkthrough Video of Function](https://drive.google.com/file/d/1ciOI6LmyWZJpKCmSnHVbwda1LuVQK7mU/preview)
+ 
   
   
   
