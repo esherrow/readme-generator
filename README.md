@@ -16,7 +16,7 @@
   # Usage
   node index.js
    
-  [Walkthrough Video of Function](https://drive.google.com/file/d/1ciOI6LmyWZJpKCmSnHVbwda1LuVQK7mU/preview)
+  Walkthrough Video of Function: [![Walkthrough Video of Function](README-gen.gif)](https://drive.google.com/file/d/1ciOI6LmyWZJpKCmSnHVbwda1LuVQK7mU/preview)
   
   # Credits
   Butler Coding Bootcamp
