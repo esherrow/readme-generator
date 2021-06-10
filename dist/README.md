@@ -16,6 +16,7 @@
   # Usage
   node index.js
   
+  [Walkthrough Video of Function](https://drive.google.com/file/d/1ciOI6LmyWZJpKCmSnHVbwda1LuVQK7mU/preview)
   
   
   
@@ -25,6 +26,6 @@
   
   ## Questions
   If you have any questions, or comments, regarding this repository please use the following contact information:
-  Elizabeth Sherrow  
-  esherrow(https://github.com/esherrow)
-  esherrow77@gmail.com
+  * Elizabeth Sherrow   
+  * [esherrow](https://github.com/esherrow)   
+  * esherrow77@gmail.com
