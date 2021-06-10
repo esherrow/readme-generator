@@ -1,24 +1,30 @@
-# README.md Generator
+# README generator
   
   ## Description
-  node.js application that will generate a README file based on user-prompted information.
+  A node.js application to dynamically generate a README markdown file based on user input
     
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Licences](#licenses)
+  * [Licenses](#licenses)
   * [Tests](#tests)
   * [Credits](#credits)
   * [Contributing](#contributing)
     
+  # Installation
+  npm install inquirer
+  
+  # Usage
+  node index.js
   
   
   
   
   
-  
+  # Contributing
+  Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change
   
   ## Questions
   If you have any questions, or comments, regarding this repository please use the following contact information:
-  Elizabeth Sherrow
-  esherrow
+  Elizabeth Sherrow  
+  esherrow(https://github.com/esherrow)
   esherrow77@gmail.com
