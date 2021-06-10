@@ -99,9 +99,9 @@ function generateMarkdown(data) {
   ${generateContrib(data.contribution)}
   ## Questions
   If you have any questions, or comments, regarding this repository please use the following contact information:
-  ${data.name}  
-  ${data.github}(https://github.com/${data.github})
-  ${data.email}
+  * ${data.name}  
+  * ${data.github}(https://github.com/${data.github})
+  * ${data.email}
 `;
 
   return fileContent;
